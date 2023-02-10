@@ -1,0 +1,28 @@
+.headerComponent {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-column-gap: 10px;
+}
+
+.dreamLogo {
+  height: 50px;
+  width: 50px;
+  justify-self: start;
+}
+
+.center {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  gap: 10px;
+  justify-self: center;
+}
+
+.searchBar {
+  width: 1000px;
+}
+
+.userIcon {
+  height: 50px;
+  width: 50px;
+  justify-self: end;
+}
