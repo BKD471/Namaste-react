@@ -1906,10 +1906,11 @@ const Footer = () => {
   return (
     <div className="footer">
       Created By
-      <RiHeartFill />
+      <RiHeartFill className="heart" />
       <a
         href="https://www.linkedin.com/in/bhaskar-kumar-das-64019a168/"
         target="_blank"
+        style={{ color: "#eeeee4" }}
       >
         Phoenix
       </a>
