@@ -18,8 +18,7 @@ import Footer from "./components/Footer";
                   -Cuisines
       Footer
             -Links
-                -CopyRight
-                                   
+                -CopyRight                   
 */
 
 const AppLayout = () => {
