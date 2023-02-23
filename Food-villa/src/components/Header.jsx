@@ -1,7 +1,11 @@
+import { useState } from "react";
 import Title from "./Title";
 
-const Header = () => (
-  <div className="header">
+
+const Header = () => {
+  const [flag,setFlag]=useState(false);
+
+  return (<div className="header">
     <Title />
     <div className="nav-items">
       <ul>
@@ -10,8 +14,15 @@ const Header = () => (
         <li>Contact</li>
         <li>Cart</li>
       </ul>
+      {
+        flag==true?<button onClick={()=> setFlag(false) }>Logout</button>: 
+        <button onClick={()=>setFlag(true)}>Login</button>
+      }
+      
     </div>
   </div>
 );
+
+    }
 
 export default Header;
