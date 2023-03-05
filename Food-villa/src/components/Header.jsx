@@ -4,7 +4,6 @@ import Title from "./Title";
 
 const Header = () => {
   const [flag,setFlag]=useState(false);
-
   return (<div className="header">
     <Title />
     <div className="nav-items">
@@ -18,7 +17,6 @@ const Header = () => {
         flag==true?<button onClick={()=> setFlag(false) }>Logout</button>: 
         <button onClick={()=>setFlag(true)}>Login</button>
       }
-      
     </div>
   </div>
 );

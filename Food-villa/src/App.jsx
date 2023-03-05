@@ -3,6 +3,9 @@ import ReactDOM from "react-dom/client";
 import Body from "./components/Body";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import About from "./components/About";
+import { createBrowserRouter,RouterProvider } from "react-router-dom";
+import ErrorComponent from "./components/Error";
 
 /* Header
           -Logo
@@ -31,6 +34,17 @@ const AppLayout = () => {
   );
 };
 
+const AppRouter=createBrowserRouter([
+  {
+    path:"/",
+    element:<AppLayout/>,
+    errorElement:<ErrorComponent/>
+  },{
+    path:"/about",
+    element:<About/>,
+  }
+]);
+
 const root = document.getElementById("root");
 const rootDOM = ReactDOM.createRoot(root);
-rootDOM.render(<AppLayout />);
+rootDOM.render(<RouterProvider router={AppRouter} />);
