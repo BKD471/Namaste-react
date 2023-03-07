@@ -1,7 +1,7 @@
 
 import { useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { SWIGGY_RESTAURANT_URL } from "../Constants";
+import { SWIGGY_RESTAURANT_URL,CDN_IMG_URL_RESTAURANT  } from "../Constants";
 
 
 
@@ -11,7 +11,6 @@ const RestaurantMenu =() =>{
   const [restaurant,setRestaurant]=useState(null);
 
   useEffect(()=>{
-    console.log("called")
      getRestautantDetails();
   },[])
 
@@ -19,11 +18,9 @@ const RestaurantMenu =() =>{
   
 const  getRestautantDetails=async ()=>{
   try{
-    //console.log("tried");
   const data =await fetch(SWIGGY_RESTAURANT_URL+id);
   const jsonData=await data.json();
   setRestaurant(jsonData?.data);
-  console.log(jsonData.data.cards[0].card.card.info.name);
   }catch(error){
     console.log(error)
   }
@@ -33,7 +30,8 @@ const  getRestautantDetails=async ()=>{
    return(
       <>
        <h1>Retstaurant id: {id}</h1>
-       <h2>{ restaurant===null ?"": restaurant?.cards[0]?.card?.card?.info?.name }</h2>
+       { restaurant==null ? "" :<img src={CDN_IMG_URL_RESTAURANT+restaurant?.cloudinaryImageId }></img>}
+       <h2>{ restaurant===null ?"": restaurant?.name }</h2>
       </>
    )
 };

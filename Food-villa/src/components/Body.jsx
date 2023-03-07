@@ -12,10 +12,7 @@ const filterList = (searchInput, searchList) => {
 const Body = () => {
   const [allRestaurantList, setAllRestaurantList] = useState([]);
   const [filteredRestaurantList, setfilteredRestaurantList] = useState([]);
-  const [searchInput, setSearchInput] = useState("Ehhh BOI!!!!!");
-
-  console.log(allRestaurantList)
-  
+  const [searchInput, setSearchInput] = useState("Ehhh BOI!!!!!");  
 
   //empty dependency array [] => once after render
   //dependency arr =>once after render + every time after re render serachtext changes
@@ -32,7 +29,6 @@ const Body = () => {
   }
 
   if(!allRestaurantList) return null;
-  // if(allRestaurantList.length>0 && filteredRestaurantList?.length===0) return <h1>No such Restaurant found</h1>
 
   return (allRestaurantList.length===0)? <Shimmer/>:(
     <>
