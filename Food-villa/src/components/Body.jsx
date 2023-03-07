@@ -1,6 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
-import { RestaurantList } from "../Constants";
 import React, { useState,useEffect } from "react";
+import {Link} from "react-router-dom";
 import { SWIGGY_URL } from "../Constants";
 import Shimmer from "./Shimmer";
 
@@ -13,6 +13,8 @@ const Body = () => {
   const [allRestaurantList, setAllRestaurantList] = useState([]);
   const [filteredRestaurantList, setfilteredRestaurantList] = useState([]);
   const [searchInput, setSearchInput] = useState("Ehhh BOI!!!!!");
+
+  console.log(allRestaurantList)
   
 
   //empty dependency array [] => once after render
@@ -56,7 +58,9 @@ const Body = () => {
       </div>
       <div className="restaurant-list">
         {filteredRestaurantList.length>0 ?filteredRestaurantList.map((restaurant) => (
-          <RestaurantCard key={restaurant.data.id} {...restaurant.data} />
+       <Link to={"/restaurant/"+restaurant.data.id} key={restaurant.data.id}>
+        <RestaurantCard key={restaurant.data.id} {...restaurant.data} />
+      </Link>   
         )):<h1>No such Restaurant</h1>
       }
       </div>
