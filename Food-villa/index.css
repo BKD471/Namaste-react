@@ -117,3 +117,9 @@ heart {
 .footer > strong {
   padding-left: 5px;
 }
+
+.restaurant-menu{
+  width: 100%;
+  text-align: center;
+  margin:0 auto;
+}

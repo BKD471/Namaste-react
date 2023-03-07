@@ -24,8 +24,8 @@ const Body = () => {
   async function getRestaurant(){
     const data= await fetch(SWIGGY_URL);
      const jsonData= await data.json();
-     setAllRestaurantList(jsonData?.data?.cards[2]?.data?.data?.cards);
-     setfilteredRestaurantList(jsonData?.data?.cards[2]?.data?.data?.cards);
+     setAllRestaurantList(jsonData?.data?.cards[0]?.data?.data?.cards);
+     setfilteredRestaurantList(jsonData?.data?.cards[0]?.data?.data?.cards);
   }
 
   if(!allRestaurantList) return null;
