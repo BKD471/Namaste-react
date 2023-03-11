@@ -12,7 +12,7 @@ class Profile extends React.Component{
     console.log("1 C0nstructor called in................")
   }
 
-  //Just because componets is already placed in DOM,its a great place to invoke API's
+  //Just because it  gets called after the componet is  placed in DOM,its a great place to invoke API's
   //Thumb rule is that, first render yr compoenent with default state data
   // make an api call after it, after you get the data from the call,
   //update the state with that data and rerender 
