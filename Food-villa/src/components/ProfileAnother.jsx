@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Profile extends Component {
+class ProfileAnother extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -8,7 +8,7 @@ class Profile extends Component {
       count2: 69,
     };
 
-    console.log("1 First Child Constructor called in................");
+    console.log("1 Second Child C0nstructor called in................");
   }
 
   //Just because it  gets called after the componet is  placed in DOM,its a great place to invoke API's
@@ -17,30 +17,14 @@ class Profile extends Component {
   //update the state with that data and rerender
   componentDidMount() {
     console.log(
-      "3 First Child Compoent successfully got  mounted on DOM............"
+      "3  Second Child Compoent successfully got  mounted on DOM............"
     );
-    this.setState({
-      count: 69,
-    });
-
-    this.timer = setInterval(() => {
-      console.log("I will Fuck yr SPA");
-    }, 1000);
-  }
-
-  componentDidUpdate() {
-    console.log("4 Child Component did update called in......");
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timer);
-    console.log("5 Child Component will be unmounted ");
   }
 
   render() {
     const { count, count2 } = this.state;
 
-    console.log("2 First Child Render called in...............");
+    console.log("2  Second Child Render called in...............");
     return (
       <>
         <h1>Profile Component</h1>
@@ -62,4 +46,4 @@ class Profile extends Component {
   }
 }
 
-export default Profile;
+export default ProfileAnother;
