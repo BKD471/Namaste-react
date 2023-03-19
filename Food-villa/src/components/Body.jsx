@@ -1,36 +1,33 @@
 import RestaurantCard from "./RestaurantCard";
-import React, { useState,useEffect } from "react";
-import {Link} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { SWIGGY_URL } from "../Constants";
+import { filterList } from "../utils/helper";
 import Shimmer from "./Shimmer";
-
-const filterList = (searchInput, searchList) => {
-  let finalList = searchList.filter((e) => e?.data?.name?.toLowerCase().includes(searchInput.toLowerCase()));
-  return finalList;
-};
 
 const Body = () => {
   const [allRestaurantList, setAllRestaurantList] = useState([]);
   const [filteredRestaurantList, setfilteredRestaurantList] = useState([]);
-  const [searchInput, setSearchInput] = useState("Ehhh BOI!!!!!");  
+  const [searchInput, setSearchInput] = useState("Ehhh BOI!!!!!");
 
   //empty dependency array [] => once after render
   //dependency arr =>once after render + every time after re render serachtext changes
-  useEffect( ()=>{
-    const fetchedRestaurants=getRestaurant();
+  useEffect(() => {
+    const fetchedRestaurants = getRestaurant();
+  }, []);
 
-  },[])
-
-  async function getRestaurant(){
-    const data= await fetch(SWIGGY_URL);
-     const jsonData= await data.json();
-     setAllRestaurantList(jsonData?.data?.cards[2]?.data?.data?.cards);
-     setfilteredRestaurantList(jsonData?.data?.cards[2]?.data?.data?.cards);
+  async function getRestaurant() {
+    const data = await fetch(SWIGGY_URL);
+    const jsonData = await data.json();
+    setAllRestaurantList(jsonData?.data?.cards[2]?.data?.data?.cards);
+    setfilteredRestaurantList(jsonData?.data?.cards[2]?.data?.data?.cards);
   }
 
-  if(!allRestaurantList) return null;
+  if (!allRestaurantList) return null;
 
-  return (allRestaurantList.length===0)? <Shimmer/>:(
+  return allRestaurantList.length === 0 ? (
+    <Shimmer />
+  ) : (
     <>
       <div className="search-container">
         <input
@@ -53,12 +50,18 @@ const Body = () => {
         </button>
       </div>
       <div className="restaurant-list">
-        {filteredRestaurantList.length>0 ?filteredRestaurantList.map((restaurant) => (
-       <Link to={"/restaurant/"+restaurant.data.id} key={restaurant.data.id}>
-        <RestaurantCard key={restaurant.data.id} {...restaurant.data} />
-      </Link>   
-        )):<h1>No such Restaurant</h1>
-      }
+        {filteredRestaurantList.length > 0 ? (
+          filteredRestaurantList.map((restaurant) => (
+            <Link
+              to={"/restaurant/" + restaurant.data.id}
+              key={restaurant.data.id}
+            >
+              <RestaurantCard key={restaurant.data.id} {...restaurant.data} />
+            </Link>
+          ))
+        ) : (
+          <h1>No such Restaurant</h1>
+        )}
       </div>
     </>
   );
