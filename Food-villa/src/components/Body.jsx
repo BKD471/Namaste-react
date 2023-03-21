@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { SWIGGY_URL } from "../Constants";
 import { filterList } from "../utils/helper";
+import { useOnline } from "../utils/useOnline";
 import Shimmer from "./Shimmer";
 
 const Body = () => {
@@ -15,6 +16,11 @@ const Body = () => {
   useEffect(() => {
     const fetchedRestaurants = getRestaurant();
   }, []);
+
+  const online = useOnline();
+  if (!online) {
+    return <h2>Please check your internet connection</h2>;
+  }
 
   async function getRestaurant() {
     const data = await fetch(SWIGGY_URL);
