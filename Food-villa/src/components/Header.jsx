@@ -20,6 +20,9 @@ const Header = () => {
           <Link to="/contact">
             <li>Contact</li>
           </Link>
+          <Link to="/instamart">
+            <li>InstaMart</li>
+          </Link>
           <li>Cart</li>
         </ul>
         <h3>{isOnline ? "✅" : "❗"}</h3>
