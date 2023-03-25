@@ -6,6 +6,7 @@ import Shimmer from "./Shimmer";
 const RestaurantMenu = () => {
   const { id } = useParams();
   const restaurant = useRestaurant(id);
+  console.log(restaurant);
 
   if (!restaurant) {
     return <Shimmer />;
@@ -29,9 +30,14 @@ const RestaurantMenu = () => {
           </>
           <>
             <h1>Menu</h1>
-            <ul>
-              {Object.values(restaurant?.menu.items).map((e) => (
+            {/* <ul>
+              {Object.values(restaurant?.cuisines).map((e) => (
                 <li key={e.id}>{e.name}</li>
+              ))}
+            </ul> */}
+            <ul>
+              {restaurant?.cuisines.map((e) => (
+                <li>{e}</li>
               ))}
             </ul>
           </>

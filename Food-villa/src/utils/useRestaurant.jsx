@@ -14,7 +14,7 @@ export const useRestaurant = (resId) => {
       const jsonData = await data.json();
       console.log(jsonData);
 
-      setRestaurant(jsonData?.data);
+      setRestaurant(jsonData?.data?.cards[0]?.card?.card?.info);
     } catch (error) {
       console.log(error);
     }
