@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Title from "./Title";
 import { Link } from "react-router-dom";
 import { useOnline } from "../utils/useOnline";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
+  const { user } = useContext(UserContext);
   const [flag, setFlag] = useState(false);
   const isOnline = useOnline();
   return (
@@ -29,7 +31,11 @@ const Header = () => {
         {flag == true ? (
           <button onClick={() => setFlag(false)}>Logout</button>
         ) : (
-          <button onClick={() => setFlag(true)}>Login</button>
+          <>
+            <button onClick={() => setFlag(true)}>Login</button>
+            <p className="font-bold text-red-600">{user.name}</p>
+            <p className="font-bold text-red-600">{user.email}</p>
+          </>
         )}
       </div>
     </div>

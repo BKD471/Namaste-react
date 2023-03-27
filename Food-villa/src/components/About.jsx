@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Profile from "./Profile";
 import ProfileAnother from "./ProfileAnother";
 import ProfileFunctionalComponent from "./ProfileFunctionalCompoennt";
+import UserContext from "../utils/UserContext";
 
 class About extends Component {
   constructor(props) {
@@ -21,7 +22,15 @@ class About extends Component {
     return (
       <>
         <h1>About Us Page</h1>
-        {""}
+        {/* Consuming context data inside class components */}
+        <UserContext.Consumer>
+          {({ user }) => (
+            <>
+              <h2>I am {user.name}</h2>
+              <h2>{user.email}</h2>
+            </>
+          )}
+        </UserContext.Consumer>
         <p>This is Namaste React Live Course</p>
         <Profile name={"Bhaskar"} />
         <ProfileAnother name={"Sayoni"} />

@@ -1,12 +1,17 @@
 import RestaurantCard from "./RestaurantCard";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { SWIGGY_URL } from "../Constants";
 import { filterList } from "../utils/helper";
 import { useOnline } from "../utils/useOnline";
 import Shimmer from "./Shimmer";
+import { Input } from "postcss";
+import UserContext from "../utils/UserContext";
 
-const Body = () => {
+const Body = ({ user }) => {
+  const { user: userFromUserContext, setUser: setUserFromUserContext } =
+    useContext(UserContext);
+
   const [allRestaurantList, setAllRestaurantList] = useState([]);
   const [filteredRestaurantList, setfilteredRestaurantList] = useState([]);
   const [searchInput, setSearchInput] = useState("Ehhh BOI!!!!!");
@@ -54,6 +59,24 @@ const Body = () => {
         >
           Search
         </button>
+        <input
+          value={userFromUserContext.name}
+          onChange={(event) => {
+            setUserFromUserContext({
+              ...userFromUserContext,
+              name: event.target.value,
+            });
+          }}
+        ></input>
+        <input
+          value={userFromUserContext.email}
+          onChange={() => {
+            setUserFromUserContext({
+              ...userFromUserContext,
+              email: event.target.value,
+            });
+          }}
+        ></input>
       </div>
       <div className="restaurant-list">
         {filteredRestaurantList.length > 0 ? (
@@ -62,7 +85,11 @@ const Body = () => {
               to={"/restaurant/" + restaurant.data.id}
               key={restaurant.data.id}
             >
-              <RestaurantCard key={restaurant.data.id} {...restaurant.data} />
+              <RestaurantCard
+                key={restaurant.data.id}
+                {...restaurant.data}
+                user={user}
+              />
             </Link>
           ))
         ) : (

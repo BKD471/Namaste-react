@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Body from "./components/Body";
 import Header from "./components/Header";
@@ -8,6 +8,7 @@ import ErrorComponent from "./components/Error";
 import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/Shimmer";
+import UserContext from "./utils/UserContext";
 
 //when we try to render instamart, it mmight happen that that bundle still havent come to browser so react will postpone  the rendering coz that requestd bundle is not still available,and it will throw error
 
@@ -50,12 +51,17 @@ const About = lazy(() => import("./components/About"));
 //Never lazy load compo inside other components
 
 const AppLayout = () => {
+  const [user, setUser] = useState({
+    name: "Ghost Rider",
+    email: "rider69@gmail.com",
+  });
+
   return (
-    <>
+    <UserContext.Provider value={{ user: user, setUser: setUser }}>
       <Header />
       <Outlet />
       <Footer />
-    </>
+    </UserContext.Provider>
   );
 };
 
@@ -67,7 +73,14 @@ const AppRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body />,
+        element: (
+          <Body
+            user={{
+              name: "Phoenix",
+              email: "phoenix@gmail.com",
+            }}
+          />
+        ),
       },
       {
         path: "/about",
