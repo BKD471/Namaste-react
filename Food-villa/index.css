@@ -125,3 +125,10 @@ heart {
   text-align: center;
   margin: 0 auto;
 }
+
+.menu-image {
+  height: 300px;
+  width: 30%;
+  align: center;
+  margin: 0 auto;
+}

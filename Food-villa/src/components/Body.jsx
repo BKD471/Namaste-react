@@ -5,7 +5,6 @@ import { SWIGGY_URL } from "../Constants";
 import { filterList } from "../utils/helper";
 import { useOnline } from "../utils/useOnline";
 import Shimmer from "./Shimmer";
-import { Input } from "postcss";
 import UserContext from "../utils/UserContext";
 
 const Body = ({ user }) => {

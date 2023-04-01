@@ -3,10 +3,15 @@ import Title from "./Title";
 import { Link } from "react-router-dom";
 import { useOnline } from "../utils/useOnline";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const { user } = useContext(UserContext);
   const [flag, setFlag] = useState(false);
+  const cartItems = useSelector((store) => store.cart.items);
+
+  console.log(cartItems);
+
   const isOnline = useOnline();
   return (
     <div className="header">
@@ -25,7 +30,9 @@ const Header = () => {
           <Link to="/instamart">
             <li>InstaMart</li>
           </Link>
-          <li>Cart</li>
+          <Link to="/cart">
+            <li>Cart</li>
+          </Link>
         </ul>
         <h3>{isOnline ? "✅" : "❗"}</h3>
         {flag == true ? (

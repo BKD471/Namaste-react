@@ -11,6 +11,7 @@ import Shimmer from "./components/Shimmer";
 import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import store from "./utils/store";
+import Cart from "./components/Cart";
 
 //when we try to render instamart, it mmight happen that that bundle still havent come to browser so react will postpone  the rendering coz that requestd bundle is not still available,and it will throw error
 
@@ -113,6 +114,10 @@ const AppRouter = createBrowserRouter([
             <InstaMart />
           </Suspense>
         ),
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

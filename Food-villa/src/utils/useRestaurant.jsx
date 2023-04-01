@@ -12,7 +12,8 @@ export const useRestaurant = (resId) => {
     try {
       const data = await fetch(SWIGGY_RESTAURANT_URL + resId);
       const jsonData = await data.json();
-      console.log(jsonData);
+
+      console.log(jsonData.data);
 
       setRestaurant(jsonData?.data?.cards[0]?.card?.card?.info);
     } catch (error) {
