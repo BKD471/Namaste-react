@@ -31,7 +31,7 @@ const Header = () => {
             <li>InstaMart</li>
           </Link>
           <Link to="/cart">
-            <li>Cart</li>
+            <li>Cart-{cartItems.length}</li>
           </Link>
         </ul>
         <h3>{isOnline ? "✅" : "❗"}</h3>

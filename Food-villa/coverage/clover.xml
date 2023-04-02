@@ -1,10 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1680438289164" clover="3.2.0">
-  <project timestamp="1680438289165" name="All files">
-    <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="2" coveredelements="2" complexity="0" loc="1" ncloc="1" packages="1" files="1" classes="1"/>
-    <file name="sum.jsx" path="C:\Users\Bhaskar\Desktop\Namaste-react\Food-villa\src\components\sum.jsx">
-      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="1" count="2" type="stmt"/>
-    </file>
+<coverage generated="1680449635951" clover="3.2.0">
+  <project timestamp="1680449635951" name="All files">
+    <metrics statements="35" coveredstatements="25" conditionals="6" coveredconditionals="2" methods="17" coveredmethods="7" elements="58" coveredelements="34" complexity="0" loc="35" ncloc="35" packages="3" files="8" classes="8"/>
+    <package name="components">
+      <metrics statements="12" coveredstatements="10" conditionals="4" coveredconditionals="2" methods="6" coveredmethods="4"/>
+      <file name="Header.jsx" path="C:\Users\Bhaskar\Desktop\Namaste-react\Food-villa\src\components\Header.jsx">
+        <metrics statements="9" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="2"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+      </file>
+      <file name="Title.jsx" path="C:\Users\Bhaskar\Desktop\Namaste-react\Food-villa\src\components\Title.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+      <file name="sum.jsx" path="C:\Users\Bhaskar\Desktop\Namaste-react\Food-villa\src\components\sum.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="mocks">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="dummyLogo.js" path="C:\Users\Bhaskar\Desktop\Namaste-react\Food-villa\src\mocks\dummyLogo.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="23" coveredstatements="15" conditionals="2" coveredconditionals="0" methods="11" coveredmethods="3"/>
+      <file name="UserContext.jsx" path="C:\Users\Bhaskar\Desktop\Namaste-react\Food-villa\src\utils\UserContext.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+      <file name="cartSlice.jsx" path="C:\Users\Bhaskar\Desktop\Namaste-react\Food-villa\src\utils\cartSlice.jsx">
+        <metrics statements="6" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+      </file>
+      <file name="store.jsx" path="C:\Users\Bhaskar\Desktop\Namaste-react\Food-villa\src\utils\store.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+      <file name="useOnline.jsx" path="C:\Users\Bhaskar\Desktop\Namaste-react\Food-villa\src\utils\useOnline.jsx">
+        <metrics statements="15" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="3"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>
