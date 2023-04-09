@@ -42,6 +42,7 @@ const Body = ({ user }) => {
       <div className="search-container">
         <input
           type="text"
+          data-testid="search-input"
           className="search-input"
           placeholder="Search"
           value={searchInput}
@@ -50,6 +51,7 @@ const Body = ({ user }) => {
           }}
         />
         <button
+          data-testid="search-btn"
           className="search-btn"
           onClick={(e) => {
             const data = filterList(searchInput, allRestaurantList);
@@ -77,7 +79,7 @@ const Body = ({ user }) => {
           }}
         ></input>
       </div>
-      <div className="restaurant-list">
+      <div className="restaurant-list" data-testid="res-list">
         {filteredRestaurantList.length > 0 ? (
           filteredRestaurantList.map((restaurant) => (
             <Link

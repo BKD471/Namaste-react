@@ -31,10 +31,10 @@ const Header = () => {
             <li>InstaMart</li>
           </Link>
           <Link to="/cart">
-            <li>Cart-{cartItems.length}</li>
+            <li data-testid="cart-length">Cart-{cartItems.length} items</li>
           </Link>
         </ul>
-        <h3>{isOnline ? "✅" : "❗"}</h3>
+        <h3 data-testid="online-status">{isOnline ? "✅" : "❗"}</h3>
         {flag == true ? (
           <button onClick={() => setFlag(false)}>Logout</button>
         ) : (
